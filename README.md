@@ -1,12 +1,20 @@
 # SnakeGame
-Snake Game Made Only With Vanilla Javascript
+Snake Game Made Only With Vanilla Javascript <br>
 
-Features to add:
-o  Touch Controls
-o  Arrow Keys Controls
-o  Mobile Version
-o  Games New to be harder
+```diff
+Features to add: 
+!  Touch Controls
+!  Arrow Keys Controls 
+!  Mobile Version 
+!  Games New to be harder 
 
 
-Known Bugs
-o  Collisions from inside of body (Fixed)
+Known Bugs <br>
++  Collisions from inside of body
+
+
+- Not fixed
++ Fixed
+! Not added
+@@ Added @@
+```
