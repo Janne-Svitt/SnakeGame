@@ -28,7 +28,7 @@ posFood();
 
 let interval1 =  setInterval(()=>{
     if (leftAdd===490){
-        leftAdd = 0;
+        leftAdd = -10;
         return;
     } else {
         leftAdd += adder
@@ -76,19 +76,19 @@ window.addEventListener("keydown", (event) =>{
     switch(event.code){
         case "KeyD":
             if(activeKey!=1){
-                activeKey=1;
                 clearInterval(interval2)
                 clearInterval(interval3)
                 clearInterval(interval4)
                 interval1 =  setInterval(()=>{
                     if (leftAdd===490){
-                        leftAdd = 0;
+                        leftAdd = -10;
                         return;
                     } else {
                         leftAdd += adder
                         posPlayer()
                     };
                 }, snakeAcc)
+                setTimeout(()=>{activeKey=1;},100)
                 break;
             } else {
                 break;
@@ -96,38 +96,38 @@ window.addEventListener("keydown", (event) =>{
 
         case "KeyA":
             if(activeKey!=1){
-                activeKey=1;
                 clearInterval(interval1)
                 clearInterval(interval3)
                 clearInterval(interval4)
                 interval2 = setInterval(()=>{
                     if(leftAdd===0){
-                        leftAdd = 490;
+                        leftAdd = 500;
                         return;
                     } else {
                         leftAdd -= adder;
                         posPlayer()
                     };
                 }, snakeAcc)
+                setTimeout(()=>{activeKey=1;},100)
                 break;
             } else {
                 break;
             }
         case "KeyW":
             if(activeKey!=2){
-                activeKey=2;
                 clearInterval(interval1)
                 clearInterval(interval2)
                 clearInterval(interval4)
                 interval3 = setInterval(()=>{
                     if(topAdd===0){
-                        topAdd= 490;
+                        topAdd= 500;
                         return;
                     } else {
                         topAdd -= adder
                         posPlayer()
                     }
                 }, snakeAcc)
+                setTimeout(()=>{activeKey=2;},100)
                 break;
             } else {
                 break;
@@ -135,20 +135,20 @@ window.addEventListener("keydown", (event) =>{
 
         case "KeyS":
             if(activeKey!=2){
-                activeKey=2;
                 clearInterval(interval1)
                 clearInterval(interval2)
                 clearInterval(interval3)
                 interval4 = setInterval(()=>{
                     if(topAdd===490){
-                        topAdd= 0;
+                        topAdd = -10;
                         return;
                     } else {
                         topAdd += adder
                         posPlayer()
                     }
                 }, snakeAcc)
-            break;
+                setTimeout(()=>{activeKey=2;},100)
+                break;
             } else {
                 break;
             } 
