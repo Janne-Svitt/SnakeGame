@@ -1,20 +1,39 @@
 let bugFix = 0;
+
+// Players game points
 let gamePoints = 0;
+
+// How many pixels the snake will move with each time
 const adder = 10;
+
+// Start position for snake
 let leftAdd = 200;
 let topAdd = 200;
+
+// Color for snake body
 let boxColor ="red";
+
+// Prevents snake from moving in opposite side
 let activeKey = 1;
+
+// How fast the snake will move
 let snakeAcc = 90;
+
+// Snake body count
 let counter = 0;
 let snakeBodyAddLength = 0;
+
+// Food random position
 let gameAreaFoodPos_Left = Math.round((Math.random() * 49))*10;
 let gameAreaFoodPos_Top = Math.round((Math.random() * 49))*10;
 console.log(gameAreaFoodPos_Left);
 console.log(gameAreaFoodPos_Top);
+
+//Array for storing snakes body position
 var snakeBodyPos = [];
 document.getElementById("gamePoints").innerHTML=`GamePoints: ${gamePoints} ⭐`;
 
+// Control information for user
 alert(`
 Controls:
 W=Up
@@ -23,9 +42,11 @@ D=Right
 A=Left
 `);
 
+// Spawn player and food
 posPlayer();
 posFood();
 
+// Auto start the snakes movement
 let interval1 =  setInterval(()=>{
     if (leftAdd===490){
         leftAdd = -10;
@@ -67,11 +88,8 @@ clearInterval(interval2)
 clearInterval(interval3)
 clearInterval(interval4)
 
-// setInterval(()=>{
-// document.getElementById("gameArea").children[1].remove();
-// }, 60);
 
-// ASWD Kontroller
+// ASWD controller
 window.addEventListener("keydown", (event) =>{
     switch(event.code){
         case "KeyD":
@@ -155,7 +173,7 @@ window.addEventListener("keydown", (event) =>{
     };
 })
 
-
+// Players postions updater
 function posPlayer(){
         document.getElementById("box").style.cssText=`
         height: 10px;
@@ -166,8 +184,9 @@ function posPlayer(){
         top: ${topAdd}px;
         z-index:999;
         `;
+
         addSnakeBody();
-        
+        // Checks snake body count
         if(counter>snakeBodyAddLength){
             document.getElementById("gameArea").children[2].remove();
             console.log(counter);
@@ -221,6 +240,8 @@ function addSnakeBody(){
     left: ${leftAdd}px;
     top: ${topAdd}px;
     `;
+
+    // Collision check for player and food
     if(leftAdd===gameAreaFoodPos_Left && topAdd===gameAreaFoodPos_Top){
         snakeBodyAddLength+=1;
         gameAreaFoodPos_Left = Math.round((Math.random() * 49))*10;
@@ -233,10 +254,10 @@ function addSnakeBody(){
     };  
 } 
 
-
+// Collision check if the player collide with itself
 function checkCollision(){
     if(snakeBodyPos.find((element) => element ==`${topAdd}x${leftAdd}`)){
-        alert("You hit your body😭 Score: "+gamePoints+" ⭐");
+        alert("You hit your body 😭 Score: "+gamePoints+" ⭐");
         location.reload()
     }
 };
