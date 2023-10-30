@@ -15,6 +15,7 @@ Features to add:
 
 Known Bugs <br>
 +  Collisions from inside of body
+-  Collide with own body when hitting border.
 
 
 - Not fixed
