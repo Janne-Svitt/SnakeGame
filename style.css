@@ -6,6 +6,12 @@ h1, p{
     padding: 20px;
 }
 
+h1{
+    background-color: lightblue;
+    border-radius: 10px;
+    width: 200px;
+}
+
 #gameArea{
     border: 4px solid black;
     position: relative;
