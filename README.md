@@ -6,7 +6,10 @@ Features to add:
 !  Touch Controls
 !  Arrow Keys Controls 
 !  Mobile Version 
-!  Games New to be harder 
+!  Games New to be harder
+!  Meny
+!  Settings
+!  Better Graphics
 
 
 Known Bugs <br>
