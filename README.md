@@ -10,7 +10,8 @@ Features to add:
 !  Meny
 !  Settings
 !  Better Graphics
-
+!  Scoreboard
+!  Highscore
 
 Known Bugs <br>
 +  Collisions from inside of body
