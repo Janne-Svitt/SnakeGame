@@ -13,7 +13,7 @@ Features to add:
 !  Scoreboard
 !  Highscore
 
-Known Bugs <br>
+Known Bugs
 +  Collisions from inside of body
 +  Collide with own body when hitting border.
 
