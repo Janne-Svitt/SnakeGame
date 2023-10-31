@@ -4,10 +4,10 @@ Snake Game Made Only With Vanilla Javascript <br>
 ```diff
 Features to add: 
 !  Touch Controls
-!  Arrow Keys Controls 
-!  Mobile Version 
+!  Arrow Keys Controls
+!  Mobile Version
 !  Games New to be harder
-!  Meny
+@@ Meny @@
 !  Settings
 !  Better Graphics
 !  Scoreboard
@@ -15,7 +15,7 @@ Features to add:
 
 Known Bugs <br>
 +  Collisions from inside of body
--  Collide with own body when hitting border.
++  Collide with own body when hitting border.
 
 
 - Not fixed
