@@ -91,7 +91,7 @@ function gameStart(){
                     clearInterval(interval4)
                     interval1 =  setInterval(()=>{
                         if (leftAdd>=490){
-                            leftAdd = 480;
+                            leftAdd = 200;
                             alert("You hit the border! 😭 Score: "+gamePoints+" ⭐");
                             location.reload();
                             return;
@@ -113,7 +113,7 @@ function gameStart(){
                     clearInterval(interval4)
                     interval2 = setInterval(()=>{
                         if(leftAdd<=0){
-                            leftAdd = 10;
+                            leftAdd = 200;
                             alert("You hit the border! 😭 Score: "+gamePoints+" ⭐");
                             location.reload();
                             return;
@@ -134,7 +134,7 @@ function gameStart(){
                     clearInterval(interval4)
                     interval3 = setInterval(()=>{
                         if(topAdd<=0){
-                            topAdd = 10;
+                            topAdd = 200;
                             alert("You hit the border! 😭 Score: "+gamePoints+" ⭐");
                             location.reload();
                             return;
@@ -156,7 +156,7 @@ function gameStart(){
                     clearInterval(interval3)
                     interval4 = setInterval(()=>{
                         if(topAdd>=490){
-                            topAdd = 480;
+                            topAdd = 200;
                             alert("You hit the border! 😭 Score: "+gamePoints+" ⭐");
                             location.reload();
                             return;

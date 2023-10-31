@@ -19,7 +19,6 @@ function menu(){
     addBox3.innerHTML=`<p id="textBox">Settings</p>`
 
     
-    // ------- How To Play -------
 };
 
 
@@ -27,6 +26,7 @@ function removeTextBox(){
     gameAreaBox.children[2].remove();
 }
 
+// ------- How To Play -------
 function howToPlay(){
     addContentBox.children[0].remove();
     addContentBox.children[0].remove();
