@@ -18,7 +18,7 @@ function gameStart(){
     let activeKey = 1;
 
     // How fast the snake will move
-    let snakeAcc = 90;
+    let snakeAcc = 100;
 
     // Snake body count
     let counter = 0;
@@ -83,8 +83,10 @@ function gameStart(){
 
     // ASWD controller
     window.addEventListener("keydown", (event) =>{
+        console.log(event.code);
         switch(event.code){
             case "KeyD":
+            case "ArrowRight":
                 if(activeKey!=1){
                     clearInterval(interval2)
                     clearInterval(interval3)
@@ -107,6 +109,7 @@ function gameStart(){
                 }
 
             case "KeyA":
+                case "ArrowLeft":
                 if(activeKey!=1){
                     clearInterval(interval1)
                     clearInterval(interval3)
@@ -128,6 +131,7 @@ function gameStart(){
                     break;
                 }
             case "KeyW":
+            case "ArrowUp":
                 if(activeKey!=2){
                     clearInterval(interval1)
                     clearInterval(interval2)
@@ -150,6 +154,7 @@ function gameStart(){
                 }
 
             case "KeyS":
+            case "ArrowDown":
                 if(activeKey!=2){
                     clearInterval(interval1)
                     clearInterval(interval2)
@@ -182,7 +187,15 @@ function gameStart(){
             position: absolute;
             left: ${leftAdd}px;
             top: ${topAdd}px;
-            z-index:999;
+            z-index:900;
+            `;
+
+            document.getElementById("innerBox").style.cssText=`
+            margin: auto;
+            height: 6px;
+            width: 6px;
+            border: 2px solid;
+            border-color: lightgreen black black lightgreen ;
             `;
 
             addSnakeBody();
@@ -214,32 +227,37 @@ function gameStart(){
         left: ${gameAreaFoodPos_Left}px;
         top: ${gameAreaFoodPos_Top}px;
         `
+        document.getElementById("innerBoxFood").style.cssText=`
+            margin: auto;
+            height: 6px;
+            width: 6px;
+            border: 2px solid;
+            border-color: lightblue black black lightblue;
+            `;
     }
-
-
-    function clearAllIntervals(){
-        let interval1;
-        let interval2;
-        let interval3;
-        let interval4;
-        clearInterval(interval1)
-        clearInterval(interval2)
-        clearInterval(interval3)
-        clearInterval(interval4)
-    }
-
 
     function addSnakeBody(){
-        let snakeBodyAdd = document.createElement("div")
+        let snakeBodyAdd = document.createElement("div");
+        let snakeBodyInnerBox = document.createElement("div");
         document.getElementById("gameArea").append(snakeBodyAdd);
+        snakeBodyAdd.append(snakeBodyInnerBox);
         snakeBodyAdd.style.cssText=`
-        height: 10px;
-        width: 10px;
-        background-color: ${boxColor};
-        position: absolute;
-        left: ${leftAdd}px;
-        top: ${topAdd}px;
+            height: 10px;
+            width: 10px;
+            background-color: ${boxColor};
+            position: absolute;
+            left: ${leftAdd}px;
+            top: ${topAdd}px;
         `;
+
+        snakeBodyInnerBox.style.cssText=`
+        margin: auto;
+        height: 6px;
+        width: 6px;
+        border: 2px solid;
+        border-color: lightcoral black black lightcoral;
+        `;
+
 
         // Collision check for player and food
         if(leftAdd===gameAreaFoodPos_Left && topAdd===gameAreaFoodPos_Top){
