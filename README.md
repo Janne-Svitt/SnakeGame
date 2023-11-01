@@ -4,9 +4,9 @@ Snake Game Made Only With Vanilla Javascript <br>
 ```diff
 Features to add: 
 !  Touch Controls
-!  Arrow Keys Controls
+@@  Arrow Keys Controls @@
 !  Mobile Version
-!  Games New to be harder
+!  Games Needs to be harder
 @@ Meny @@
 !  Settings
 !  Better Graphics
